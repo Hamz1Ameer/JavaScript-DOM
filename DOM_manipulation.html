@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        /*styling for boxdiv*/
+        /* #divBox {
+            width: 100px;
+            height: 100px;
+            background: red;
+        } */
+
+        /* Styling for input events div */
+        /* div#name {
+            margin: 20px 0px 20px 0px;
+            text-align: center;
+        }
+
+        div.inputEvents {
+            text-align: center;
+            font-size: 200%;
+        }
+
+        #ice,
+        #iceCreams {
+            width: 150px;
+            height: 25px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- New List used in adding or inserting elements before, after, start and end of the nodes. -->
+
+    <!--Using below list to insert nodes-->
+    <!-- <ol>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ol> -->
+
+    <!-- this is the updated list using DOM AMnipulations-->
+    <!-- <ol id="list1">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ol> -->
+
+
+    <!-- Here Starts Mouse Events in js -->
+    <!-- <div id="demoDiv" onmousedown="mouseDown()" onmouseup="mouseUp()"> -->
+    <!-- Here adding two mouse events as mouseup and mouse down -->
+    <!-- This is a demo content -->
+    <!-- by clicking this text the color of the text changes using onmouseup and onmousedown evenets-->
+    <!-- </div> -->
+
+    <!-- this div is used in mouse events with eventListeners: mouseEnter and mouseLeave-->
+    <!-- <div id="divBox"></div> -->
+
+
+
+
+    <!-- The following div is used for keyboard events:-->
+    <!-- <div>
+        <p>Enter any text in Below Field</p>
+        <input type="text" class="res" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+        <p id="keyDetails"></p>
+        <p id="keyUpDown"></p>
+    </div> -->
+
+
+
+    <!-- Here starts Input Events:-->
+    <!-- <div class="inputEvents">
+        <div id="name" for=" ">Enter your name</div>
+        <input type="text" name=" " id="ice">
+        <select id="iceCreams" name="iceCreams" onchange="change()"> -->
+    <!-- Adding a change() function for onchange event in the above snippet-->
+
+    <!-- <option value=" ">Select one</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="blackCurrent">Black Current</option>
+        </select>
+        <div id="result"></div> -->
+
+
+    <!-- Using above same input fields for input events using addEventListener() -->
+    <!-- <div class="iceCreams" name="iceCreams"> -->
+    <!-- in above snipppet here we are not using call back function -->
+
+    <!-- <option value=" ">Select one</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="blackCurrent">Black Current</option>
+        </select>
+        <div id="result"></div> 
+    </div>-->
+    <script>
+        // let div = document.createElement('div');//creating new element with div tag
+        // div.id = 'demo'; //assigning an id to div element
+        // div.className = `content`; // giving a class with name content to the div element
+        // div.innerHTML = '<p>Hello World</p>';// here adding html snippet to div element with <p> tag
+        // document.body.append(div);//attaching
+        // let myTextNode = document.createTextNode("world");// now creating a new node with myTextNode variable and html text as 'World'
+        // document.body.append(myTextNode);// attaching the node to the document
+        // let myElem = document.createElement("p");// creating another element with p name
+        // myElem.innerText = 'Hello world 2';// giving the inner text as 'Hello world 2'
+        // document.body.append(myElem);//attaching the element to document
+        // console.log(document.children); // getting childerns of document
+        // // myElem.remove(); // removes the p element from the document
+
+        // // inserting nodes before, after, begining and ending of an unordered list from above HTML snippet:
+        // list1.before('Before');// adds new node before the elment, It uses the id of the elememnt
+        // list1.after('After');// adds new node after the elment, It uses the id of the elememnt
+
+        // let li1 = document.createElement('li');//creates a new element as 'li'
+        // let li2 = document.createElement('li');//creates a new element as 'li'
+        // li1.innerHTML = 'This is prepend';//giving innerHTML
+        // li2.innerHTML = 'This is append';//giving innerHTML
+        // list1.prepend(li1);//attaching it to the list
+        // list1.append(li2);//attaching it to the list
+
+        // // we can also replace nodes  for example:
+        // li1.append(li2);// this will move the li2 after the li1;
+        // let script = document.createElement('script');// creating an element with script
+        // script.src = '/dom-manipulation.js';// giving the source file of the script
+        // document.body.append(script);// attaching the script to document.
+
+        // // Here starts mouse events:
+        // function mouseDown() { // mouse down event function
+        //     document.getElementById('demoDiv').style.color = 'blue'; // when mouse click the text with mousedown event the color of the text will change to blue
+        // }
+        // function mouseUp() {//mouse up event function
+        //     document.getElementById('demoDiv').style.color = 'red';//when mouse release the click then color will be red
+        // }
+        // let demoDiv = document.getElementById('demoDiv');
+        // console.log(demoDiv.textContent); //with this textContent property the text content will be shown on console
+
+        // let mEnter = document.getElementById('divBox');
+        // mEnter.addEventListener('mouseenter', () => { // this is a mouse event, mouseenter event listener changes the styling from next line when mouse is on the element
+        //     mEnter.style.backgroundColor = 'gold';
+        //     console.log('Mouse Event Enter');
+        // });
+        // mEnter.addEventListener('mouseleave', () => { // this is a mouse event, mouseenter event listener again changes the styling from next line when mouse leaves the element
+        //     mEnter.style.backgroundColor = 'blue';
+        //     console.log('Mouse Event Left');
+        // });
+
+        // // Keyboard Events:
+        // let keyPress = () => {
+        //     document.getElementById('keyDetails').innerHTML = `You pressed ${event.key} and its code is ${event.code}`;// the event.code property: gives the code of the required key
+        //     console.log(`You pressed ${event.key} and its code is ${event.code}`); // the event.key property: is used to give which key is pressed
+        // }
+        // let keyDown = () => {
+        //     document.getElementById('keyUpDown').innerHTML = `Key is Down`;
+        //     console.log(`Key is Down`);
+        // }
+        // let keyUp = () => {
+        //     document.getElementById('keyUpDown').innerHTML = `Key is Up`;
+        //     console.log(`Key is Up`);
+        // }
+
+
+        // // this script is for onchange event function: change()
+        // const change = () => {
+        //     const inputChange = document.getElementById('ice').value;// getting element using id="ice" and storing in inoutChange variable
+        //     const iceCreams = document.getElementById('iceCreams').value;// getting element with id="icecreams" and storing its value in variable icecreams
+        //     console.log(`User ${inputChange} selected ${iceCreams}`);//this will show output in console
+        //     const result = document.getElementById('result');
+        //     result.innerHTML = `User ${inputChange} selected ${iceCreams}`;//changing its content with in result
+        // };
+
+        // // input Events using addEventListener():
+        // const inputEvent = document.getElementById('iceCreams');
+        // inputEvent.addEventListener('change', () => {
+        //     const inputChange = document.getElementById('ice').value;// getting element using id="ice" and storing in inputChange variable
+        //     const iceCreams = document.getElementById('iceCreams').value;// getting element with id="icecreams" and storing its value in variable icecreams
+        //     console.log(`User ${inputChange} selected ${iceCreams}`);//this will show output in console
+        //     const result = document.getElementById('result');//getting element with id name result and storing variable result
+        //     result.innerHTML = `User ${inputChange} selected ${iceCreams}`; //changing its content with in result
+        // });
+
+    </script>
+</body>
+
+</html>
