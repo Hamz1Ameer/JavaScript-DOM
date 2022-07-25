@@ -104,6 +104,31 @@
         </select>
         <div id="result"></div> 
     </div>-->
+
+
+
+    <!-- Here starts time baased Events: setTimeout() and clearTimeout-->
+    <!-- <div id="main-div">
+        <p>
+            Click below button to get my name:
+        </p>
+        <button id="btn" onclick="  ref = setTimeout(() => showName.innerHTML = 'AMEER', 2000)">CLick Here</button>
+        <button id="btn2" onclick="clearTimeout(ref)">Stop</button>
+        <p id="showName"></p>
+    </div> -->
+
+
+    <!-- Here starts time baased Events: setInterval() and clearInterval-->
+    <!-- <div id="main-div">
+        <div>Stop the timer when it reaches 5</div>
+
+        <p></p>
+
+        <button id="btn">click me to Start or Resume</button>
+        <button id="btn2">Stop or Pause</button>
+    </div> -->
+
+
     <script>
         // let div = document.createElement('div');//creating new element with div tag
         // div.id = 'demo'; //assigning an id to div element
@@ -129,7 +154,7 @@
         // list1.prepend(li1);//attaching it to the list
         // list1.append(li2);//attaching it to the list
 
-        // // we can also replace nodes  for example:
+        // // we can also replace nodes for example:
         // li1.append(li2);// this will move the li2 after the li1;
         // let script = document.createElement('script');// creating an element with script
         // script.src = '/dom-manipulation.js';// giving the source file of the script
@@ -137,57 +162,76 @@
 
         // // Here starts mouse events:
         // function mouseDown() { // mouse down event function
-        //     document.getElementById('demoDiv').style.color = 'blue'; // when mouse click the text with mousedown event the color of the text will change to blue
+        // document.getElementById('demoDiv').style.color = 'blue'; // when mouse click the text with mousedown event the color of the text will change to blue
         // }
         // function mouseUp() {//mouse up event function
-        //     document.getElementById('demoDiv').style.color = 'red';//when mouse release the click then color will be red
+        // document.getElementById('demoDiv').style.color = 'red';//when mouse release the click then color will be red
         // }
         // let demoDiv = document.getElementById('demoDiv');
         // console.log(demoDiv.textContent); //with this textContent property the text content will be shown on console
 
         // let mEnter = document.getElementById('divBox');
         // mEnter.addEventListener('mouseenter', () => { // this is a mouse event, mouseenter event listener changes the styling from next line when mouse is on the element
-        //     mEnter.style.backgroundColor = 'gold';
-        //     console.log('Mouse Event Enter');
+        // mEnter.style.backgroundColor = 'gold';
+        // console.log('Mouse Event Enter');
         // });
         // mEnter.addEventListener('mouseleave', () => { // this is a mouse event, mouseenter event listener again changes the styling from next line when mouse leaves the element
-        //     mEnter.style.backgroundColor = 'blue';
-        //     console.log('Mouse Event Left');
+        // mEnter.style.backgroundColor = 'blue';
+        // console.log('Mouse Event Left');
         // });
 
         // // Keyboard Events:
         // let keyPress = () => {
-        //     document.getElementById('keyDetails').innerHTML = `You pressed ${event.key} and its code is ${event.code}`;// the event.code property: gives the code of the required key
-        //     console.log(`You pressed ${event.key} and its code is ${event.code}`); // the event.key property: is used to give which key is pressed
+        // document.getElementById('keyDetails').innerHTML = `You pressed ${event.key} and its code is ${event.code}`;// the event.code property: gives the code of the required key
+        // console.log(`You pressed ${event.key} and its code is ${event.code}`); // the event.key property: is used to give which key is pressed
         // }
         // let keyDown = () => {
-        //     document.getElementById('keyUpDown').innerHTML = `Key is Down`;
-        //     console.log(`Key is Down`);
+        // document.getElementById('keyUpDown').innerHTML = `Key is Down`;
+        // console.log(`Key is Down`);
         // }
         // let keyUp = () => {
-        //     document.getElementById('keyUpDown').innerHTML = `Key is Up`;
-        //     console.log(`Key is Up`);
+        // document.getElementById('keyUpDown').innerHTML = `Key is Up`;
+        // console.log(`Key is Up`);
         // }
 
 
         // // this script is for onchange event function: change()
         // const change = () => {
-        //     const inputChange = document.getElementById('ice').value;// getting element using id="ice" and storing in inoutChange variable
-        //     const iceCreams = document.getElementById('iceCreams').value;// getting element with id="icecreams" and storing its value in variable icecreams
-        //     console.log(`User ${inputChange} selected ${iceCreams}`);//this will show output in console
-        //     const result = document.getElementById('result');
-        //     result.innerHTML = `User ${inputChange} selected ${iceCreams}`;//changing its content with in result
+        // const inputChange = document.getElementById('ice').value;// getting element using id="ice" and storing in inoutChange variable
+        // const iceCreams = document.getElementById('iceCreams').value;// getting element with id="icecreams" and storing its value in variable icecreams
+        // console.log(`User ${inputChange} selected ${iceCreams}`);//this will show output in console
+        // const result = document.getElementById('result');
+        // result.innerHTML = `User ${inputChange} selected ${iceCreams}`;//changing its content with in result
         // };
 
         // // input Events using addEventListener():
         // const inputEvent = document.getElementById('iceCreams');
         // inputEvent.addEventListener('change', () => {
-        //     const inputChange = document.getElementById('ice').value;// getting element using id="ice" and storing in inputChange variable
-        //     const iceCreams = document.getElementById('iceCreams').value;// getting element with id="icecreams" and storing its value in variable icecreams
-        //     console.log(`User ${inputChange} selected ${iceCreams}`);//this will show output in console
-        //     const result = document.getElementById('result');//getting element with id name result and storing variable result
-        //     result.innerHTML = `User ${inputChange} selected ${iceCreams}`; //changing its content with in result
+        // const inputChange = document.getElementById('ice').value;// getting element using id="ice" and storing in inputChange variable
+        // const iceCreams = document.getElementById('iceCreams').value;// getting element with id="icecreams" and storing its value in variable icecreams
+        // console.log(`User ${inputChange} selected ${iceCreams}`);//this will show output in console
+        // const result = document.getElementById('result');//getting element with id name result and storing variable result
+        // result.innerHTML = `User ${inputChange} selected ${iceCreams}`; //changing its content with in result
         // });
+
+
+        //here starts script for time based events: setIneterval() and clearInterval();
+        /*const numbers = document.querySelector('p');
+        const btn = document.querySelector('#btn');
+        const btn2 = document.querySelector('#btn2');
+        let num = 0;
+        const showNum = () => {
+            numbers.innerHTML = 'Loading...';
+            ref = setInterval(() => {
+                numbers.innerHTML = `${num}`;
+                num++;
+
+            }, 1000)
+        }
+        btn.addEventListener('click', showNum)
+        btn2.addEventListener('click', () => {
+            clearInterval(ref);
+        })*/
 
     </script>
 </body>
